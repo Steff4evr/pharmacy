@@ -6,7 +6,8 @@ import time
 
 def placing_customer_order():
     search_results = []
-    found = False
+    found_med_flag = False
+    qty_available_flag = False
     # Enter the med id
     while True:
         print("\n")
@@ -21,20 +22,33 @@ def placing_customer_order():
             time.sleep(2)
         if med_id_user_input == 0:
             return None
+        try:
+            med_qty_user_input = int(
+                input("Enter the quantity to add to cart.. To discontinue, enter 0 "))
+        except ValueError:
+            print("Invalid Quantity !")
+            time.sleep(2)            
+        if med_qty_user_input == 0:
+            return None
         #Open inventory
         medicine_inventory = openpyxl.load_workbook("MEDICINE_INVENTORY.xlsx")
         mi = medicine_inventory.active
         # Search Inventory for the Medicine
-        for i in range(2, mi.max_row+1):            
-            for j in range(1, 2):                
-                med_id = mi.cell(row=i, column=j)                
-                if (med_id_user_input == int(med_id.value)):
-                    found = True
-                    search_results.append(med_id.value)
+        for i in range(2, mi.max_row+1):                            
+            med_id = mi.cell(row=i, column=1)
+            med_name = mi.cell(row=i, column=2)
+            med_qty = mi.cell(row=i, column=4)               
+            if (med_id_user_input == int(med_id.value)):
+                found_med_flag = True
+                available_med_qty = med_qty.value
+                if (med_qty_user_input <= int(med_qty.value)):
+                    qty_available_flag = True             
+                    search_results.append({med_id.value,med_name.value,med_qty.value})
                     print(f" Medicine Id : {search_results}", end="\n")
-        if found is False:
+        if found_med_flag is False:
             print("Medicine Not Found")
-
+        if qty_available_flag is False:
+            print(f"There is not enough quantity available for this medicine in the inventory. Only {available_med_qty} available")
         # Enter the qty needed
         # Check if the med id the qty is available
         # if yes then add to  invoice
