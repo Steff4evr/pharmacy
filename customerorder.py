@@ -2,7 +2,7 @@ import time
 import os
 from searchdrugs_excel import search_drugs
 from placingcustomerorder import placing_customer_order
-
+from billing import billing_invoice_generation
 
 def customer_order():
     cart = []
@@ -31,6 +31,7 @@ def customer_order():
             time.sleep(2)
         elif user_option == 3:
             print(f"Cart Items : {cart}")
+            billing_invoice_generation(cart)
             time.sleep(2)
         elif user_option == 4:
             cart.clear()
