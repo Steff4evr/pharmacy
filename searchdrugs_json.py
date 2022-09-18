@@ -2,7 +2,7 @@ import time
 import json
 import re
 
-def searchdrugs():
+def search_drugs():
     found =False
     print("****************************************************************")
     print("***************************Search Drugs*********************************")
@@ -22,4 +22,4 @@ def searchdrugs():
         if found is False:
             print("Medicine Not Found")
 
-searchdrugs()
+search_drugs()
