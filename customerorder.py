@@ -22,21 +22,21 @@ def customer_order():
         # Catch  any invalid input
         except ValueError:
             print("Invalid Option !")
-            time.sleep(2)
+            time.sleep(1)
         if user_option == 1:
             search_drugs()
-            time.sleep(2)
+            time.sleep(1)
         elif user_option == 2:
             cart = placing_customer_order(cart)
-            time.sleep(2)
+            time.sleep(1)
         elif user_option == 3:
             print(f"Cart Items : {cart}")
             billing_invoice_generation(cart)
-            time.sleep(2)
+            time.sleep(1)
         elif user_option == 4:
             cart.clear()
             print("Cart Emptied !")
-            time.sleep(2)
+            time.sleep(1)
         elif user_option == 5:
             exit()
 
