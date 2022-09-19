@@ -18,7 +18,7 @@ def main():
         print("7. Exit")
 
         try:
-            choice = int(input("Choose your Option :"))            
+            choice = int(input("Choose your Option :"))
         except ValueError:
             print("Invalid Option !")
             time.sleep(2)
