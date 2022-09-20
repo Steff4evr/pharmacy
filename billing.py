@@ -16,10 +16,9 @@ def billing_invoice_generation(cart):
             if billing_user_input.lower() == "y":
                 #Creating the invoice 
                 # create a company name and information
-
                 company_name = 'Steff''s Pharmacy.'
                 company_address = '007 James Bond St.'
-                company_city = 'Melbourne'                               
+                company_city = 'Melbourne'
                 # declare ending message
                 message = 'Thanks for shopping with us today!'
                 # create a top border
@@ -49,13 +48,14 @@ def billing_invoice_generation(cart):
                 print('\n\t{}\n'.format(message))
                 # create a bottom border
                 print('-' * 50)
-
                 #Creating an Invoice file in project folder
                 now = datetime.now()
                 print(f"Invoice Date ={now}\n")
-                print('#' * 50)
-                dt_string = now.strftime("%d%m%Y%H%M%S")                
-                invoice_file_name = 'invoice_'+dt_string
+                dt_string = now.strftime("%d%m%Y%H%M%S")
+                invoice_number = 'SP'+dt_string
+                print(f"Invoice Number ={invoice_number}\n")
+                print('#' * 50)                                
+                invoice_file_name = 'invoice_'+invoice_number
                 with  open(invoice_file_name,'w') as f:
                     # create a top border
                     f.write('#' * 50)
@@ -88,23 +88,9 @@ def billing_invoice_generation(cart):
                     f.write('\n')
                     f.write('-' * 50)
                     f.write(f"\nInvoice Date ={now}\n")
+                    f.write(f"Invoice Number ={invoice_number}\n")
                     f.write('#' * 50)
-
-                    #Reducing the inventory after the customer order has been processed
-                    medicine_inventory = openpyxl.load_workbook("MEDICINE_INVENTORY.xlsx")
-                    update_mi = medicine_inventory.active
-                    for i in cart:
-                        for J in range(2, update_mi.max_row+1):
-                            update_med_id = update_mi.cell(row=J, column=1)
-                            update_med_qty = update_mi.cell(row=J, column=4)
-                            if (i["med_id"] == int(update_med_id.value)):
-                                
-                                #update the quantity
-                                update_mi.cell(row=J, column=4).value = update_med_qty.value - i["med_qty"]
-                    #saving the changes
-                    medicine_inventory.save("MEDICINE_INVENTORY.xlsx")
-                return None
-        
+                    return invoice_number
             elif billing_user_input.lower() == "n":
                     print("Returning to the Cutomer Order Menu..")
                     time.sleep(1)

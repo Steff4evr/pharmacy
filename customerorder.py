@@ -3,6 +3,8 @@ import os
 from searchdrugs_excel import search_drugs
 from placingcustomerorder import placing_customer_order
 from billing import billing_invoice_generation
+from inventoryupdate import inventory_update
+from invoiceupdate import invoice_update
 
 def customer_order():
     cart = []
@@ -31,7 +33,10 @@ def customer_order():
             time.sleep(1)
         elif user_option == 3:
             print(f"Cart Items : {cart}")
-            billing_invoice_generation(cart)
+            invoice_number=billing_invoice_generation(cart)
+            if invoice_number is not None:
+                inventory_update(cart)
+                invoice_update(cart,invoice_number)
             time.sleep(1)
         elif user_option == 4:
             cart.clear()
