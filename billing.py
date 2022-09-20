@@ -56,7 +56,7 @@ def billing_invoice_generation(cart):
                 print('#' * 50)
                 dt_string = now.strftime("%d%m%Y%H%M%S")                
                 invoice_file_name = 'invoice_'+dt_string
-                with  open(invoice_file_name,'w') as f:                        
+                with  open(invoice_file_name,'w') as f:
                     # create a top border
                     f.write('#' * 50)
                     # print company information first using format
@@ -70,7 +70,7 @@ def billing_invoice_generation(cart):
                     f.write('\n\tProduct Name\tQuantity\tPrice\n')                    
                     # create a print statement for each item
                     for i in cart:
-                        f.write('\t{}\t-{}-\t{} AUD'.format(i['med_name'],i['med_qty'],i['med_price']*i['med_qty'])) 
+                        f.write('\t{}\t-{}-\t{} AUD'.format(i['med_name'],i['med_qty'],i['med_price']*i['med_qty']))
                         f.write('\n')
                     # print a line between sections
                     f.write('\n')
@@ -97,9 +97,10 @@ def billing_invoice_generation(cart):
                         for J in range(2, update_mi.max_row+1):
                             update_med_id = update_mi.cell(row=J, column=1)
                             update_med_qty = update_mi.cell(row=J, column=4)
-                            if (i["med_id"] == int(update_med_id.value)):                                
+                            if (i["med_id"] == int(update_med_id.value)):
+                                
                                 #update the quantity
-                                update_mi.cell(row=J, column=4).value = update_med_qty.value - i["med_qty"]                                
+                                update_mi.cell(row=J, column=4).value = update_med_qty.value - i["med_qty"]
                     #saving the changes
                     medicine_inventory.save("MEDICINE_INVENTORY.xlsx")
                 return None
