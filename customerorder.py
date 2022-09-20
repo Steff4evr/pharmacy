@@ -1,6 +1,8 @@
 import time
-import os
-from searchdrugs_excel import search_drugs
+from rich import print
+from rich.console import Console
+from rich.table import Table
+from searchdrugs import search_drugs
 from placingcustomerorder import placing_customer_order
 from billing import billing_invoice_generation
 from inventoryupdate import inventory_update
@@ -8,16 +10,18 @@ from invoiceupdate import invoice_update
 
 def customer_order():
     cart = []
+    console = Console()
     while True:
         # Menu for getting customer order
-        print("****************************************************************")
-        print("***********************CUSTOMER ORDER***************************")
-        print("****************************************************************")            
-        print("1. Search for medicine and add to customer order")
-        print("2. Placing the customer order")
-        print("3. Verify medicines in cart and confirm order")
-        print("4. Clear cart")
-        print("5. Exit to main menu")
+        print("************************************")   
+        table =Table(show_header=False, header_style="bold blue",title="CUSTOMER ORDER",title_justify="center")
+        table.add_row("1. Search for medicine for customer")            
+        table.add_row("2. Placing the customer order")
+        table.add_row("3. Verify medicines in cart and confirm order")
+        table.add_row("4. Clear cart")
+        table.add_row("5. Exit to main menu")
+        console.print(table)
+        print("************************************")
         # capture user input
         try:
             user_option = int(input("Choose an option .. "))
@@ -43,6 +47,4 @@ def customer_order():
             print("Cart Emptied !")
             time.sleep(1)
         elif user_option == 5:
-            exit()
-
-customer_order()
+            return None

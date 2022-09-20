@@ -9,7 +9,7 @@ def search_drugs():
     print("***********************Search Drugs*****************************")
     print("****************************************************************")
     drug_name=input("Enter the drug name to search : ")
-    print(f'Searching for {drug_name} in the inventory...' )    
+    print(f'Searching for {drug_name} in the inventory...')
     #Open the inventory file
     medicine_inventory = openpyxl.load_workbook("medicine_inventory.xlsx")
     mi = medicine_inventory.active

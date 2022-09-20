@@ -1,21 +1,27 @@
 from rich import print
-from rich import console
-from searchdrugs import searchdrugs
+from rich.console import Console
+from rich.table import Table
+
 import time
+from searchdrugs import search_drugs
+from customerorder import customer_order
 
 
 def main():
+    console = Console()
     while True:
-        print("****************************************************************")
-        print("***************************MENU*********************************")
-        print("****************************************************************")
-        print("1. Search for Medicine")
-        print("2. Customer Order")        
-        print("3. Stock In Hand Report")
-        print("4. Sales Report")
-        print("5. Purchase Report")
-        print("6. New Stock Order")
-        print("7. Exit")
+        print("*****************************")
+        table =Table(show_header=False, header_style="bold blue",title="MENU",title_justify="center")        
+        table.add_row("1. Search for Medicine")        
+        table.add_row("2. Customer Order")        
+        table.add_row("3. Stock In Hand Report")
+        table.add_row("4. Sales Report")
+        table.add_row("5. Purchase Report")
+        table.add_row("6. New Stock Order")
+        table.add_row("7. Exit")
+        console.print(table)
+        print("*****************************")
+
 
         try:
             choice = int(input("Choose your Option :"))
@@ -24,10 +30,9 @@ def main():
             time.sleep(2)
             continue
         if choice == 1:
-            searchdrugs()             
+            search_drugs()             
         elif choice == 2:
-            #Function for customer order
-            pass
+            customer_order()            
         elif choice == 3:
             #Function for stock in hand report
             pass
