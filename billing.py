@@ -90,30 +90,22 @@ def billing_invoice_generation(cart):
                     f.write(f"\nInvoice Date ={now}\n")
                     f.write('#' * 50)
 
-                
+                    #Reducing the inventory after the customer order has been processed
                     medicine_inventory = openpyxl.load_workbook("MEDICINE_INVENTORY.xlsx")
                     update_mi = medicine_inventory.active
                     for i in cart:
                         for J in range(2, update_mi.max_row+1):
                             update_med_id = update_mi.cell(row=J, column=1)
                             update_med_qty = update_mi.cell(row=J, column=4)
-                            if (i["med_id"] == int(update_med_id.value)):
-                                # update_med_qty.value = update_med_qty.value - i["med_qty"]
-                                update_mi.cell(row=J, column=4).value = update_med_qty.value - i["med_qty"]
-                                print(update_med_qty.value, i["med_qty"],update_mi.cell(row=J, column=4).value)
-
+                            if (i["med_id"] == int(update_med_id.value)):                                
+                                #update the quantity
+                                update_mi.cell(row=J, column=4).value = update_med_qty.value - i["med_qty"]                                
+                    #saving the changes
                     medicine_inventory.save("MEDICINE_INVENTORY.xlsx")
                 return None
-
-                #Reducing the med from inventory                
-                #Open inventory
-                # medicine_inventory = openpyxl.load_workbook("MEDICINE_INVENTORY.xlsx")
-                # mi = medicine_inventory.active
-                # Search Inventory for the Medicine and quantity
-                #for i in range(2, mi.max_row+1):                
-
+        
             elif billing_user_input.lower() == "n":
-                    print("Returning to the Cutomer Order Menu ..")
+                    print("Returning to the Cutomer Order Menu..")
                     time.sleep(1)
                     return None
             else:
