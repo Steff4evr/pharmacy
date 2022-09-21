@@ -1,16 +1,17 @@
 import time
 from datetime import datetime
-import uuid
+from rich.console import Console
+from rich.table import Table
 import openpyxl
 
 def billing_invoice_generation(cart):
     total = 0
+    console = Console()
     while True:
         print("\n")
-        print("****************************************************************")
-        print("********************Billing & Invoice**********************")
-        print("****************************************************************")
-        print(f'Medicines in cart: {cart}')
+        table_main=Table(show_header=False, header_style="bold blue",title="Billing & Invoice",title_justify="center")
+        table_main.add_row(f'Medicines in cart: {cart}')
+        console.print(table_main)
         try:
             billing_user_input = input("Do you want to continue with the billing ? (y/n)")
             if billing_user_input.lower() == "y":
@@ -21,31 +22,34 @@ def billing_invoice_generation(cart):
                 company_city = 'Melbourne'
                 # declare ending message
                 message = 'Thanks for shopping with us today!'
+                
                 # create a top border
                 print('#' * 50)
                 # print company information first using format
-                print('\t\t{}'.format(company_name.title()))
-                print('\t\t{}'.format(company_address.title()))
-                print('\t\t{}'.format(company_city.title()))                
+                table =Table(show_header=False, header_style="bold blue",title="INVOICE",title_justify="center")
+                table.add_row('\t\t{}'.format(company_name.title()))
+                table.add_row('\t\t{}'.format(company_address.title()))
+                table.add_row('\t\t{}'.format(company_city.title()))                
                 # create a top border
-                print('-' * 50)
+                table.add_row('-' * 50)
                 # print out header for section of items
-                print('\tProduct Name\t   Quantity\tPrice')
+                table.add_row('\tProduct Name\t   Quantity\tPrice')
                 # create a print statement for each item
                 for i in cart:
-                    print('\t{}\t-{}-\t{} AUD'.format(i['med_name'],i['med_qty'],i['med_price']*i['med_qty']))                    
+                    table.add_row('\t{}\t-{}-\t{} AUD'.format(i['med_name'],i['med_qty'],i['med_price']*i['med_qty']))                    
                 # print a line between sections
-                print('=' * 50)
+                table.add_row('=' * 50)
                 # print out header for section of total
-                print('\t\t\tTotal')
+                table.add_row('\t\t\tTotal')
                 # calculate total price and print out
                 for i in cart:
                     total = total + (float(i['med_price'])*i['med_qty'])
-                print('\t\t\t${}'.format(total))
+                table.add_row('\t\t\t${}'.format(total))
                 # print a line between sections
-                print('=' * 50)
+                table.add_row('=' * 50)
                 # output thank you message
-                print('\n\t{}\n'.format(message))
+                table.add_row('\n\t{}\n'.format(message))
+                console.print(table)
                 # create a bottom border
                 print('-' * 50)
                 #Creating an Invoice file in project folder

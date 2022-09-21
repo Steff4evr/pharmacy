@@ -29,14 +29,14 @@ def customer_order():
         except ValueError:
             print("Invalid Option !")
             time.sleep(1)
+            continue
         if user_option == 1:
             search_drugs()
             time.sleep(1)
         elif user_option == 2:
             cart = placing_customer_order(cart)
             time.sleep(1)
-        elif user_option == 3:
-            print(f"Cart Items : {cart}")
+        elif user_option == 3:            
             invoice_number=billing_invoice_generation(cart)
             if invoice_number is not None:
                 inventory_update(cart)
