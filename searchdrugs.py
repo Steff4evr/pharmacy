@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.table import Table
 
 
-def search_drugs():        
+def search_drugs():
     console = Console()
     table = Table(show_header=False, header_style="bold blue",
                   title="SEARCH FOR MEDICINE", title_justify="center")
@@ -29,16 +29,16 @@ def search_drugs():
                     found = True
                     print(f" Medicine Id : {med_id.value}", end=" ")
                     print(f" Medicine Name : {med_name.value}", end=" ")
-                    print(f" Quantity Available : {med_qty.value}", end="\n")                    
+                    print(f" Quantity Available : {med_qty.value}", end="\n")
         if found is False:
             print("Medicine Not Found !\n")
-        while(True):
+        while (True):
             try:
-                continue_search = str(input("\nDo you wish to search for another medicine? (y/n): "))
+                continue_search = str(
+                    input("\nDo you wish to search for another medicine? (y/n): "))
                 if continue_search == 'y':
                     break
                 elif continue_search == 'n':
                     return None
             except ValueError:
                 print("Invalid Option !")
-        

@@ -11,6 +11,7 @@ def inventory_update(cart):
             update_med_qty = update_mi.cell(row=j, column=4)
             if (i["med_id"] == int(update_med_id.value)):
                 # update the quantity
-                update_mi.cell(row=j, column=4).value = update_med_qty.value - i["med_qty"]
+                update_mi.cell(
+                    row=j, column=4).value = update_med_qty.value - i["med_qty"]
                 # saving the changes
                 medicine_inventory.save("medicine_inventory.xlsx")
