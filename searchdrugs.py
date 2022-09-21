@@ -18,7 +18,7 @@ def search_drugs():
         for j in range(1,2):
             med_id = mi.cell(row=i, column=1)                            
             med_name = mi.cell(row=i, column=2)
-            med_qty = mi.cell(row=i, column=4)
+            med_qty = mi.cell(row=i, column=4) 
             match_drug = re.match('.*'+drug_name.lower()+'.*',med_name.value.lower())
             if (match_drug):                
                 found = True
