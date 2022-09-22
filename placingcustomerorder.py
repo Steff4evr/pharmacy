@@ -101,9 +101,9 @@ def placing_customer_order(medicine_cart):
                         medicine_cart.append({'med_id': med_id.value, 'med_name': med_name.value,
                                              'med_qty': med_qty_user_input, 'med_price': med_price.value * med_qty_user_input})
 
-                    print("\nMedicines added to cart .. \n")
+                    print("\nMedicine added to cart .. \n")
                     table_cart = Table(show_header=False,
-                                       header_style="bold blue")
+                                       header_style="bold blue", title="Medicine Cart",title_justify="center")
                     header = medicine_cart[0].keys()
                     rows = [x.values() for x in medicine_cart]
                     table_cart.add_row(tabulate.tabulate(rows, header))

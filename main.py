@@ -1,10 +1,12 @@
 from rich import print
 from rich.console import Console
 from rich.table import Table
-
+import pandas as pd
 import time
 from searchdrugs import search_drugs
 from customerorder import customer_order
+from displayinvoicereport import display_invoice_report
+from displaystockreport import display_stock_report
 
 
 def main():
@@ -33,11 +35,9 @@ def main():
         elif choice == 2:
             cart = customer_order(cart)
         elif choice == 3:
-            # Function for stock in hand report
-            pass
+            display_stock_report()
         elif choice == 4:
-            # Function for Sales Report
-            pass
+            display_invoice_report()
         elif choice == 5:
             exit()
         else:
