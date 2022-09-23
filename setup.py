@@ -20,58 +20,59 @@ except Exception:
 
 setup(
 
-# Project name:
+    # Project name:
 
-name='steffs_pharmacy',
+    name='steffs_pharmacy',
 
-# Packages to include in the distribution:
+    # Packages to include in the distribution:
 
-packages=find_packages(','),
+    packages=find_packages(','),
 
-# Project version number:
+    # Project version number:
 
-version='0.0.1',
+    version='0.0.1',
 
-# List a license for the project, eg. MIT License
+    # List a license for the project, eg. MIT License
 
-license='',
+    license='',
 
-# Short description of your library:
+    # Short description of your library:
 
-description='Steffs  Pharmacy Management App',
+    description='Steffs  Pharmacy Management App',
 
-# Long description of your library:
+    # Long description of your library:
 
-long_description=long_description,
+    long_description=long_description,
 
-long_description_content_type='text/markdown',
+    long_description_content_type='text/markdown',
 
-# Your name:
+    # Your name:
 
-author='Steffy Johnson',
+    author='Steffy Johnson',
 
-# Your email address:
+    # Your email address:
 
-author_email='steffycherian17@gmail.com',
+    author_email='steffycherian17@gmail.com',
 
-# Link to your github repository or website:
+    # Link to your github repository or website:
 
-url='',
+    url='',
 
-# Download Link from where the project can be downloaded from:
+    # Download Link from where the project can be downloaded from:
 
-download_url='',
+    download_url='',
 
-# List of keywords:
+    # List of keywords:
 
-keywords=[],
+    keywords=[],
 
-# List project dependencies:
+    # List project dependencies:
 
-install_requires=['pandas','clearing', 'time', 'openpyxl' , 'pip', 'rich','re'],
+    install_requires=['pandas', 'clearing',
+                      'time', 'openpyxl', 'pip', 'rich', 're'],
 
-# https://pypi.org/classifiers/
+    # https://pypi.org/classifiers/
 
-classifiers=[]
+    classifiers=[]
 
 )

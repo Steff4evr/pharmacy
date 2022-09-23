@@ -1,4 +1,3 @@
-
 import re
 import openpyxl
 import time
@@ -6,6 +5,8 @@ import tabulate
 import clearing
 from rich.console import Console
 from rich.table import Table
+
+# Function to place customer order
 
 
 def placing_customer_order(medicine_cart):
@@ -29,6 +30,7 @@ def placing_customer_order(medicine_cart):
                     input("Enter the med id to add to cart.. To discontinue, enter 0 -->  ").strip())
                 break
             except ValueError:
+                # When user input is invalid display alert
                 print("Invalid med id !")
                 time.sleep(2)
                 continue
@@ -49,7 +51,8 @@ def placing_customer_order(medicine_cart):
         if med_qty_user_input == 0:
             return medicine_cart
         # Open inventory
-        medicine_inventory = openpyxl.load_workbook("src/steffs_pharmacy/data/medicine_inventory.xlsx")
+        medicine_inventory = openpyxl.load_workbook(
+            "src/steffs_pharmacy/data/medicine_inventory.xlsx")
         mi = medicine_inventory.active
         # Search Inventory for the Medicine and quantity
         for i in range(2, mi.max_row+1):
@@ -105,11 +108,13 @@ def placing_customer_order(medicine_cart):
 
                     print("\nMedicine added to cart .. \n")
                     table_cart = Table(show_header=False,
-                                       header_style="bold blue", title="Medicine Cart",title_justify="center")
+                                       header_style="bold blue", title="Medicine Cart", title_justify="center")
                     header = medicine_cart[0].keys()
                     rows = [x.values() for x in medicine_cart]
+                    # tabulate the cart
                     table_cart.add_row(tabulate.tabulate(rows, header))
                     clearing.clear()
+                    # display the cart
                     console.print(table_cart)
 
         # if med availability flag is false then provide user alert

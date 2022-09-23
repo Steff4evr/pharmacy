@@ -17,4 +17,3 @@ def invoice_update(cart, invoice_number):
     invoices.save("invoices.xlsx")
     print("Updated the invoices report .. ")
     time.sleep(1)
-    

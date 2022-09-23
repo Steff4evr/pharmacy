@@ -8,7 +8,9 @@ from displaystockreport import display_stock_report
 from rich import print
 from rich.console import Console
 from rich.table import Table
-#Steffs Pharmacy Main function
+# Steffs Pharmacy Main function
+
+
 def main():
     console = Console()
     cart = []
@@ -24,7 +26,7 @@ def main():
         table.add_row("5. Exit")
         console.print(table)
         print("*****************************")
-
+        # Try block for user input
         try:
             choice = int(input("Choose your Option :"))
         except ValueError:
@@ -32,14 +34,19 @@ def main():
             time.sleep(2)
             continue
         if choice == 1:
+            # Call funtion to seach medicine
             search_drugs()
         elif choice == 2:
+            # call function to place customer order
             cart = customer_order(cart)
         elif choice == 3:
+            # Call function to display stock report
             display_stock_report()
         elif choice == 4:
+            # Call function to display invoice report
             display_invoice_report()
         elif choice == 5:
+            # exit
             exit()
         else:
             # invalid choice

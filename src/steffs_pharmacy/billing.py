@@ -6,6 +6,8 @@ from rich.table import Table
 import tabulate
 import openpyxl
 
+# Function for billing and generating the invoice
+
 
 def billing_invoice_generation(cart):
     total = 0
@@ -18,8 +20,11 @@ def billing_invoice_generation(cart):
 
         header = cart[0].keys()
         rows = [x.values() for x in cart]
+        # Tabulate the cart entries
         table_main.add_row(tabulate.tabulate(rows, header))
+        # Display the cart
         console.print(table_main)
+        # Try block to capture invalid user input
         try:
             billing_user_input = input(
                 "Do you want to continue with the billing ? (y/n)")
@@ -109,11 +114,14 @@ def billing_invoice_generation(cart):
                     enter_key = input("Press 'Enter' to continue..")
                     return invoice_number
             elif billing_user_input.lower() == "n":
+                # Return to  customer order menu when the input is 'n'
                 print("Returning to the Cutomer Order Menu..")
                 time.sleep(1)
                 return None
             else:
                 raise ValueError
+        # catch invalid user input
         except ValueError:
+            # invalid option
             print("Invalid Option !")
             time.sleep(1)
