@@ -17,7 +17,7 @@ def customer_order(cart):
     while True:
         clearing.clear()
         # Menu for getting customer order
-        print("************************************")
+        print("*"*50)
         table = Table(show_header=False, header_style="bold blue",
                       title="CUSTOMER ORDER", title_justify="center")
         table.add_row("1. Search for medicine for customer")
@@ -26,7 +26,7 @@ def customer_order(cart):
         table.add_row("4. Clear cart")
         table.add_row("5. Exit to main menu")
         console.print(table)
-        print("************************************")
+        print("*"*50)
         # capture user input
         try:
             user_option = int(input("Choose an option .. "))
