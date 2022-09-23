@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+steffs_pharmacy.egg-info/PKG-INFO
+steffs_pharmacy.egg-info/SOURCES.txt
+steffs_pharmacy.egg-info/dependency_links.txt
+steffs_pharmacy.egg-info/requires.txt
+steffs_pharmacy.egg-info/top_level.txt

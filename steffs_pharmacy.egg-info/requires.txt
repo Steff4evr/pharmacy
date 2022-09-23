@@ -1,0 +1,7 @@
+pandas
+openpyxl
+pip
+time
+clearing
+rich
+re

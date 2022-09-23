@@ -70,7 +70,7 @@ def billing_invoice_generation(cart):
                 invoice_number = 'SP'+dt_string
                 print(f"Invoice Number ={invoice_number}\n")
                 print('#' * 50)
-                invoice_file_name = 'invoice_'+invoice_number
+                invoice_file_name = './data/invoice_'+invoice_number
                 with open(invoice_file_name, 'w') as f:
                     # create a top border
                     f.write('#' * 50)

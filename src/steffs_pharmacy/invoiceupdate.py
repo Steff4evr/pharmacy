@@ -3,7 +3,7 @@ import time
 
 
 def invoice_update(cart, invoice_number):
-    invoices = openpyxl.load_workbook("invoices.xlsx")
+    invoices = openpyxl.load_workbook("./data/invoices.xlsx")
     update_invoices = invoices.active
     j = update_invoices.max_row
     for i in cart:

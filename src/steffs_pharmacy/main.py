@@ -8,7 +8,7 @@ from displaystockreport import display_stock_report
 from rich import print
 from rich.console import Console
 from rich.table import Table
-
+#Steffs Pharmacy Main function
 def main():
     console = Console()
     cart = []

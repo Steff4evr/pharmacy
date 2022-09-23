@@ -18,7 +18,7 @@ def search_drugs():
         drug_name = input("\nEnter the drug name to search : ")
         print(f'Searching for {drug_name} in the inventory...\n')
         # Open the inventory file
-        medicine_inventory = openpyxl.load_workbook("medicine_inventory.xlsx")
+        medicine_inventory = openpyxl.load_workbook("./data/medicine_inventory.xlsx")
         mi = medicine_inventory.active
         for i in range(1, mi.max_row+1):
             for j in range(1, 2):
