@@ -3,7 +3,7 @@ import openpyxl
 
 def inventory_update(cart):
     # Reducing the inventory after the customer order has been processed
-    medicine_inventory = openpyxl.load_workbook("./data/medicine_inventory.xlsx")
+    medicine_inventory = openpyxl.load_workbook("src/steffs_pharmacy/data/medicine_inventory.xlsx")
     update_mi = medicine_inventory.active
     for i in cart:
         for j in range(2, update_mi.max_row+1):

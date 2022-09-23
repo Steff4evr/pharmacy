@@ -44,6 +44,7 @@ def main():
         else:
             # invalid choice
             print(f'Choice {choice} is invalid')
+            time.sleep(2)
             continue
 
 

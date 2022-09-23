@@ -19,7 +19,7 @@ def customer_order(cart):
         table = Table(show_header=False, header_style="bold blue",
                       title="CUSTOMER ORDER", title_justify="center")
         table.add_row("1. Search for medicine for customer")
-        table.add_row("2. Placing the customer order")
+        table.add_row("2. Place the customer order")
         table.add_row("3. Verify medicines in cart and confirm order")
         table.add_row("4. Clear cart")
         table.add_row("5. Exit to main menu")
@@ -31,7 +31,7 @@ def customer_order(cart):
         # Catch  any invalid input
         except ValueError:
             print("Invalid Option !")
-            time.sleep(1)
+            time.sleep(2)
             continue
         if user_option == 1:
             search_drugs()
@@ -55,3 +55,7 @@ def customer_order(cart):
             time.sleep(1)
         elif user_option == 5:
             return cart
+        else:            
+            print(f'Choice {user_option} is invalid')
+            time.sleep(2)
+            continue

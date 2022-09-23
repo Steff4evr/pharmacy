@@ -49,7 +49,7 @@ def placing_customer_order(medicine_cart):
         if med_qty_user_input == 0:
             return medicine_cart
         # Open inventory
-        medicine_inventory = openpyxl.load_workbook("./data/medicine_inventory.xlsx")
+        medicine_inventory = openpyxl.load_workbook("src/steffs_pharmacy/data/medicine_inventory.xlsx")
         mi = medicine_inventory.active
         # Search Inventory for the Medicine and quantity
         for i in range(2, mi.max_row+1):
