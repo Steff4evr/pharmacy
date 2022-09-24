@@ -35,7 +35,7 @@ Generation of stock report helps to keep track of the inventory. The medicine in
  ![TESTCASES](./tests/TestCases.xlsx)
 
 ## Trello Project Management
-![PROJECTMANAGEMENT](./docs/projectmanagementtrello_trello.png)
+![PROJECTMANAGEMENT](./docs/trello_projectmanagement.png)
 
 ## Trello : Menu
 ![MENU](./docs/trello_menu.png)
@@ -57,7 +57,7 @@ Generation of stock report helps to keep track of the inventory. The medicine in
 
 
 
-## Help  
+# Help  
 
 Design help documentation which includes a set of instructions which accurately describe how to use and install the application. 
 
