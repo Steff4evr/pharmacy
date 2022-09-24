@@ -22,7 +22,7 @@ def customer_order(cart):
                       title="CUSTOMER ORDER", title_justify="center")
         table.add_row("1. Search for medicine for customer")
         table.add_row("2. Place the customer order")
-        table.add_row("3. Verify medicines in cart and confirm order")
+        table.add_row("3. Billing and Invoice")
         table.add_row("4. Clear cart")
         table.add_row("5. Exit to main menu")
         console.print(table)

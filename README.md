@@ -1,27 +1,22 @@
 # T1A3 -  Terminal Application
 
-# R4
-[github repo](https://github.com/Steff4evr/pharmacy)
 
+# MEDIA LINKS
+[github repo](https://github.com/Steff4evr/pharmacy)
 [Youtube link]()
 
 
 ##### STEFF'S PHARMACY #####
 
-# R5
 
-## PEP 8 - Styling
+
+# PEP 8 - Styling
 The formatting is as per the guidances mentioned in the PEP8  guide - 
 https://peps.python.org/pep-0008/#package-and-module-names
 
 
-# R6
-
-
-
 # FEATURE 1 : SEARCH FOR MEDICINE IN THE PHARMACY INVENTORY
 The basic feature of the Steffs Pharmacy app is the search feature. Here, the user can search for the medicines that are available for the customers to order. The inventory sheet is read using  openpyxl library. The rows in the excel sheet is traversed using a 'for' loop. The user input is compared against each cell in the medicine name column in the inventory excel. The matching is done using regex library. If the medicine pattern is found then display the relevent fields of the inventory item. If no matches are found then display message informing the same. If-else control statements are used for this. The user is provided the option to  perform searches until they are done. All exceptions are handled in the appropriate manner with proper messages displayed to the user. The user inputs are placed in the try except block to control the same.
-
 
 # FEATURE 2 : ADD MEDICINES TO CART
 When the user of the application gives an order from the customer, the user  will first search for the medicine in the inventory. Once confirming that the medicine is available, the user will use the med-id to add the medicine to the cart. The user has to enter the med-id and the quatity of the medicine needed. Invalid inputs are captured by a try-except block. The inventory excel sheet is opened using openpyxl and traversed using a for loop. Once the matching med_id is founnd, there is further check to ensure that enough quatity is available.If sufficient quantity is not available then a flag is set and the user is prompted to re-renter the med id and quantity. If the quantity is available then the medicine is added to the cart. This check is performed using an If-else control statements. The items in cart are displayed after each item is successfully added to the cart. While adding a medicine to the cart, if the med-id is already present in the cart, then the user is prompter to  confirm if they need to replace the existing item in the cart. If user confirms 'y', then the item in cart is replaced with new item, else there wont be any change in cart. The whole process is looped in a while loop as more medicines can be added to the cart, the loop can be exited when the user enters the value '0' for the med-id or the quantity inputs.
@@ -39,15 +34,15 @@ Generation of stock report helps to keep track of the inventory. The medicine in
 # TEST CASES :
  ![TESTCASES](./tests/TestCases.xlsx)
 
-# R7
+# Trello Project Management
+![PROJECTMANAGEMENT](./docs/projectmanagementtrello_trello.png)
+![MENU](./docs/trello_menu.png)
+![MEDICINEINV](./docs/trello_medicineinventory.png)
+![ADDTOCART](./docs/trello_addtocart.png)
+![INVOICEGENERATION](./docs/trello_invoicegeneration.png)
+![INVOICEFILECREATION](./docs/trello_invoicefilecreation.png)
+![REPORTS](./docs/trello_reports.png)
 
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-
-Utilise a suitable project management platform to track this implementation plan.
-Provide screenshots/images and/or a reference to an accessible project management platform used to track this implementation plan. 
-Your checklists for each feature should have at least 5 items.
 
 
 # R8 
