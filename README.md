@@ -36,16 +36,28 @@ Generation of stock report helps to keep track of the inventory. The medicine in
 
 # Trello Project Management
 ![PROJECTMANAGEMENT](./docs/projectmanagementtrello_trello.png)
+
+# Trello : Menu
 ![MENU](./docs/trello_menu.png)
+
+# Trello : Medicine Inventory
 ![MEDICINEINV](./docs/trello_medicineinventory.png)
+
+# Trello : Add to cart
 ![ADDTOCART](./docs/trello_addtocart.png)
+
+# Trello : Invoice generation
 ![INVOICEGENERATION](./docs/trello_invoicegeneration.png)
+
+# Trello : Invoice file creation
 ![INVOICEFILECREATION](./docs/trello_invoicefilecreation.png)
+
+# Trello : Reports
 ![REPORTS](./docs/trello_reports.png)
 
 
 
-# R8 
+# Help  
 
 Design help documentation which includes a set of instructions which accurately describe how to use and install the application. 
 
