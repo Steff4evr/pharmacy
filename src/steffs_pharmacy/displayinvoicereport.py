@@ -19,7 +19,7 @@ def display_invoice_report():
         "-----------------------------------SALES REPORT-----------------------------------")
     console.print(table_stock)
     # print the report to terminal
-    print(sales_report)
+    print(f"{sales_report.to_string()}\n")
     print("-"*36, "END-OF-REPORT", "-"*36)
     # Hit enter key to return
     enter_key = input("Press 'Enter' to continue.")

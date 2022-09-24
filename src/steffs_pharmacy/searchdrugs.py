@@ -30,15 +30,17 @@ def search_drugs():
                 med_id = mi.cell(row=i, column=1)
                 med_name = mi.cell(row=i, column=2)
                 med_qty = mi.cell(row=i, column=4)
+                med_price = mi.cell(row=i, column=6)
                 # Search for medicine in the inventory
                 match_drug = re.match(
                     '.*'+drug_name.lower()+'.*', med_name.value.lower())
                 if (match_drug):
                     # medicine is found in inventory then display the same
                     found = True
-                    print(f" Medicine Id : {med_id.value}", end=" ")
-                    print(f" Medicine Name : {med_name.value}", end=" ")
-                    print(f" Quantity Available : {med_qty.value}", end="\n")
+                    print(f" Med Id : {med_id.value}", end=" ")
+                    print(f" Med Name : {med_name.value}", end=" ")
+                    print(f" Qty Available : {med_qty.value}", end="\n")
+                    print(f" Price : {med_price.value}", end="\n")
         if found is False:
             # if medicine not found then display the alert
             print("Medicine Not Found !\n")

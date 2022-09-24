@@ -17,11 +17,12 @@ def display_stock_report():
         "src/steffs_pharmacy/data/medicine_inventory.xlsx")
     table_stock = Table(show_header=False, header_style="bold blue")
     table_stock.add_row(
-        "---------------------------------------STOCK REPORT---------------------------------------")
+        "-------------------------------------------------------------STOCK REPORT-------------------------------------------------------------")
     # display the heading
     console.print(table_stock)
     # display the stock report
-    print(f"{stock_report}\n")
+    print(f"{stock_report.to_string()}\n")
     print("-"*39, "END-OF-REPORT", "-"*39)
-    # press
+    # press enter to continue
     enter_key = input("Press 'Enter' to continue.")
+ 

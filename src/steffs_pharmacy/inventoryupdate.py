@@ -18,4 +18,4 @@ def inventory_update(cart):
                 update_mi.cell(
                     row=j, column=4).value = update_med_qty.value - i["med_qty"]
                 # saving the changes
-                medicine_inventory.save("medicine_inventory.xlsx")
+                medicine_inventory.save("src/steffs_pharmacy/data/medicine_inventory.xlsx")
