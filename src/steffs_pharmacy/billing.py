@@ -16,7 +16,7 @@ def billing_invoice_generation(cart):
     while True:
         print("\n")
         table_main = Table(show_header=False, header_style="bold blue",
-                           title="Billing & Invoice", title_justify="center")
+                           title="BILLING & INVOICE", title_justify="center")
 
         header = cart[0].keys()
         rows = [x.values() for x in cart]

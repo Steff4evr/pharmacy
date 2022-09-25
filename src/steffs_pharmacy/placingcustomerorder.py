@@ -108,7 +108,7 @@ def placing_customer_order(medicine_cart):
 
                     print("\nMedicine added to cart .. \n")
                     table_cart = Table(show_header=False,
-                                       header_style="bold blue", title="Medicine Cart", title_justify="center")
+                                       header_style="bold blue", title="MEDICINE CART", title_justify="center")
                     header = medicine_cart[0].keys()
                     rows = [x.values() for x in medicine_cart]
                     # tabulate the cart
