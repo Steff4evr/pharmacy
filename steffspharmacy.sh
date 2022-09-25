@@ -13,7 +13,8 @@ else
     pip install openpyxl 2> /dev/null
     pip install re 2> /dev/null
     pip install rich 2> /dev/null
-    python3 src/steffs_pharmacy/main.py
+    pip install tabulate 2> /dev/null
+    python src/steffs_pharmacy/main.py
 fi
 
 

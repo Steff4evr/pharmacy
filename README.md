@@ -60,7 +60,9 @@ Generation of stock report helps to keep track of the inventory. The medicine in
 
 # Help  
 
-Design help documentation which includes a set of instructions which accurately describe how to use and install the application. 
+
+# Steps to Install
+From download
 
 You must include:
 - steps to install the application
