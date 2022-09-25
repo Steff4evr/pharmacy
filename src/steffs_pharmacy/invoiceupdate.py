@@ -13,7 +13,7 @@ def invoice_update(cart, invoice_number):
         update_invoices.cell(row=j, column=3).value = i["med_name"]
         update_invoices.cell(row=j, column=4).value = i["med_qty"]
         update_invoices.cell(
-            row=j, column=5).value = i["med_price"]*i["med_qty"]
+            row=j, column=5).value = i["med_price"]
     invoices.save("src/steffs_pharmacy/data/invoices.xlsx")
     print("Updated the invoices report .. ")
     time.sleep(1)
