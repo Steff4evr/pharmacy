@@ -1,14 +1,12 @@
 # T1A3 -  Terminal Application
 
-
 # MEDIA LINKS
 [github repo](https://github.com/Steff4evr/pharmacy)
 
-[Youtube link]()
+[Youtube link](https://youtu.be/qnbcRS6UU2Y)
 
 
 # STEFF'S PHARMACY
-
 
 
 ## PEP 8 - Styling
@@ -58,17 +56,24 @@ Generation of stock report helps to keep track of the inventory. The medicine in
 
 
 
-# Help  
+## Help  
 
 
-# Steps to Install
-From download
+## Steps to Install
+1. From Git hub repo , download the pharmacy repo. Link provided below.
+2. [github repo](https://github.com/Steff4evr/pharmacy)
+3. Unzip the downloaded zip file.
 
-You must include:
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
-- how to use any command line arguments made for the application - BASH
+## Dependecies
+Python3 vesion should be already isntalled. 
+Most of the libraries used are installed as part of the app run.
+
+## System requirements 
+Linux- Ubuntu 16.04 to 17.10, or Windows 7 to 10, with 2GB RAM (4GB preferable)
+
+## Running the app.
+Run the steffspharmacy.sh shell script present in folder pharmacy/ using terminal application like CYGWIN in windows
+
 
 
 
