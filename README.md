@@ -8,8 +8,8 @@
 
 # STEFFS PHARMACY
 
-
-## PEP 8 - Styling
+## CODE STYLING
+### PEP 8 - Styling
 The formatting is as per the guidances mentioned in the PEP8  guide - 
 https://peps.python.org/pep-0008/#package-and-module-names
 
