@@ -3,7 +3,7 @@
 # MEDIA LINKS
 [github repo](https://github.com/Steff4evr/pharmacy)
 
-[Youtube link](https://youtu.be/qnbcRS6UU2Y)
+[Youtube link - SteffyJohnson_T1A3 - STEFFSPHARMACY](https://youtu.be/qnbcRS6UU2Y)
 
 
 # STEFFS PHARMACY
