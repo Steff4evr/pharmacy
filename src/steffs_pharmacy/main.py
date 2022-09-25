@@ -17,12 +17,14 @@ def main():
     while True:
         clearing.clear()
         print("*****************************")
+        print("        STEFFS PHARMACY")
+        print("*****************************")
         table = Table(show_header=False, header_style="bold blue",
                       title="MENU", title_justify="center")
         table.add_row("1. Search for Medicine")
-        table.add_row("2. Customer Order")
-        table.add_row("3. Stock In Hand Report")
-        table.add_row("4. Sales Report")
+        table.add_row("2. Customer Order")                
+        table.add_row("3. Sales Report")
+        table.add_row("4. Stock In Hand Report")
         table.add_row("5. Exit")
         console.print(table)
         print("*****************************")
@@ -40,11 +42,11 @@ def main():
             # call function to place customer order
             cart = customer_order(cart)
         elif choice == 3:
-            # Call function to display stock report
-            display_stock_report()
-        elif choice == 4:
             # Call function to display invoice report
             display_invoice_report()
+        elif choice == 4:            
+            # Call function to display stock report
+            display_stock_report()
         elif choice == 5:
             # exit
             exit()

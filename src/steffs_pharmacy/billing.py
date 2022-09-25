@@ -52,14 +52,14 @@ def billing_invoice_generation(cart):
                 # create a print statement for each item
                 for i in cart:
                     table.add_row(
-                        '\t{}\t-{}-\t{} AUD'.format(i['med_name'], i['med_qty'], i['med_price']*i['med_qty']))
+                        '\t{}\t-{}-\t{} AUD'.format(i['med_name'], i['med_qty'], i['med_price']))
                 # print a line between sections
                 table.add_row('=' * 50)
                 # print out header for section of total
                 table.add_row('\t\t\tTotal')
                 # calculate total price and print out
                 for i in cart:
-                    total = total + (float(i['med_price'])*i['med_qty'])
+                    total = total + float(i['med_price'])
                 table.add_row('\t\t\t${}'.format(total))
                 # print a line between sections
                 table.add_row('=' * 50)
@@ -91,7 +91,7 @@ def billing_invoice_generation(cart):
                     # create a print statement for each item
                     for i in cart:
                         f.write(
-                            '\t{}\t-{}-\t{} AUD'.format(i['med_name'], i['med_qty'], i['med_price']*i['med_qty']))
+                            '\t{}\t-{}-\t{} AUD'.format(i['med_name'], i['med_qty'], i['med_price']))
                         f.write('\n')
                     # print a line between sections
                     f.write('\n')

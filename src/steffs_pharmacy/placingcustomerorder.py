@@ -18,7 +18,7 @@ def placing_customer_order(medicine_cart):
         found_med_flag = False
         qty_available_flag = False
         table_main = Table(show_header=False, header_style="bold blue",
-                           title="Placing Customer Order", title_justify="center")
+                           title="ADD TO CART", title_justify="center")
         table_main.add_row(
             'Follow the instructions to add medicines to cart ..')
         console.print(table_main)
