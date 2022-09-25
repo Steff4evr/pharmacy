@@ -25,4 +25,3 @@ def display_stock_report():
     print("-"*39, "END-OF-REPORT", "-"*39)
     # press enter to continue
     enter_key = input("Press 'Enter' to continue.")
- 
